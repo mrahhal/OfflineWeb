@@ -55,6 +55,7 @@
     <Compile Include="Visitors\ScriptsVisitor.cs" />
     <Compile Include="Visitors\StylesVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebWorker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
