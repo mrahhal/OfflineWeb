@@ -11,6 +11,14 @@ namespace OfflineWeb
 		Task<string> DownloadStringAsync(string address);
 	}
 
+	public static class WebClientExtensions
+	{
+		public static Task<string> DownloadStringAsync(this IWebClient @this, Uri address)
+		{
+			return @this.DownloadStringAsync(address.ToString());
+		}
+	}
+
 	public class WebClientAdapter : IWebClient
 	{
 		private WebClient _webClient = new WebClient();

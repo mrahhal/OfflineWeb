@@ -50,6 +50,7 @@
     <Compile Include="NodeKind.cs" />
     <Compile Include="IVisitor.cs" />
     <Compile Include="IWebClient.cs" />
+    <Compile Include="Visitors\StylesVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
