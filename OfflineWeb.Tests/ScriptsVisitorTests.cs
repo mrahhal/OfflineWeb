@@ -21,7 +21,7 @@ namespace OfflineWeb.Tests
 		}
 
 		[Fact]
-		public async Task Visit_LinkWithAbsoluteHref()
+		public async Task Visit_ScriptWithAbsoluteHref()
 		{
 			var visitor = new ScriptsVisitor();
 			var node = HtmlNode.CreateNode(@"<script src=""http://www.some2.com/l.js""></script>");
@@ -37,7 +37,7 @@ namespace OfflineWeb.Tests
 		}
 
 		[Fact]
-		public async Task Visit_LinkWithRelativeHref()
+		public async Task Visit_ScriptWithRelativeHref()
 		{
 			var visitor = new ScriptsVisitor();
 			var node = HtmlNode.CreateNode(@"<script src=""l.js""></script>");
@@ -49,6 +49,22 @@ namespace OfflineWeb.Tests
 			};
 			var newNode = await visitor.VisitAsync(context, node);
 			client.Verify(c => c.DownloadStringAsync("http://www.some.com/l.js"), Times.Once);
+			Assert.Equal("<script>function some(){}</script>", newNode.OuterHtml);
+		}
+
+		[Fact]
+		public async Task Visit_ScriptWithSrcStartingWithTwoSlashes_ShouldBeHandledCorrectly()
+		{
+			var visitor = new ScriptsVisitor();
+			var node = HtmlNode.CreateNode(@"<script src=""//www.some2.com/l.js""></script>");
+			var client = VisitorsHelper.CreateWebClientMock("function some(){}");
+			var context = new VisitingContext()
+			{
+				RawAddress = "http://www.some.com",
+				WebClient = client.Object,
+			};
+			var newNode = await visitor.VisitAsync(context, node);
+			client.Verify(c => c.DownloadStringAsync("http://www.some2.com/l.js"), Times.Once);
 			Assert.Equal("<script>function some(){}</script>", newNode.OuterHtml);
 		}
 	}

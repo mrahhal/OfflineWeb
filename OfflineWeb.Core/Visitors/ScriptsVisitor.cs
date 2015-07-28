@@ -21,6 +21,13 @@ namespace OfflineWeb.Visitors
 			var src = node.GetAttributeValue("src", null);
             if (src == null)
 				return node;
+
+			// Take care if the src starts with two slashes.
+			if (src.StartsWith("//"))
+			{
+				src = "http:" + src;
+			}
+
 			var srcUri = new Uri(src, UriKind.RelativeOrAbsolute);
 			if (!srcUri.IsAbsoluteUri)
 			{
