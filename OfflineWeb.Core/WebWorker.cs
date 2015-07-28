@@ -72,7 +72,7 @@ namespace OfflineWeb
 			// Create the context.
 			var context = new VisitingContext()
 			{
-				RawAddress = address.ToString(),
+				Address = address,
 				WebClient = WebClient,
 			};
 

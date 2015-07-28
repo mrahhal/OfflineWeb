@@ -34,7 +34,7 @@ namespace OfflineWeb.Tests
 			var client = VisitorsHelper.CreateWebClientMock("function some(){}");
 			var context = new VisitingContext()
 			{
-				RawAddress = "http://www.some.com",
+				Address = new Uri("http://www.some.com"),
 				WebClient = client.Object,
 			};
 
@@ -55,7 +55,7 @@ namespace OfflineWeb.Tests
 			var client = VisitorsHelper.CreateWebClientMock("function some(){}");
 			var context = new VisitingContext()
 			{
-				RawAddress = "http://www.some.com",
+				Address = new Uri("http://www.some.com"),
 				WebClient = client.Object,
 			};
 
@@ -76,7 +76,7 @@ namespace OfflineWeb.Tests
 			var client = VisitorsHelper.CreateWebClientMock("function some(){}");
 			var context = new VisitingContext()
 			{
-				RawAddress = "http://www.some.com",
+				Address = new Uri("http://www.some.com"),
 				WebClient = client.Object,
 			};
 
