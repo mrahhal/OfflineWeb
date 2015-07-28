@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="VisitingContext.cs" />
     <Compile Include="NodeKind.cs" />
+    <Compile Include="IVisitor.cs" />
     <Compile Include="IWebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
