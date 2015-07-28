@@ -32,6 +32,7 @@ namespace OfflineWeb.Visitors
 			{
 				hrefUri = new Uri(context.Address, hrefUri);
 			}
+
 			// Get the stylesheet and insert it inline.
 			var content = await context.WebClient.DownloadStringAsync(hrefUri);
 			content = "<style>" + content + "</style>";

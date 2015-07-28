@@ -6,6 +6,9 @@ using HtmlAgilityPack;
 
 namespace OfflineWeb.Visitors
 {
+	/// <summary>
+	/// A visitor that puts script references inline.
+	/// </summary>
 	public class ScriptsVisitor : IVisitor
 	{
 		public NodeKind InterestingNodes
@@ -33,6 +36,7 @@ namespace OfflineWeb.Visitors
 			{
 				srcUri = new Uri(context.Address, srcUri);
 			}
+
 			// Get the script and insert it inline.
 			var content = await context.WebClient.DownloadStringAsync(srcUri);
 			content = "<script>" + content + "</script>";
