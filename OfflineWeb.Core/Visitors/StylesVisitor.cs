@@ -34,7 +34,7 @@ namespace OfflineWeb.Visitors
 			}
 
 			// Get the stylesheet and insert it inline.
-			var content = await context.WebClient.DownloadStringAsync(hrefUri);
+			var content = await context.WebClient.DownloadAsync(hrefUri);
 			content = "<style>" + content + "</style>";
 			return HtmlNode.CreateNode(content);
 		}

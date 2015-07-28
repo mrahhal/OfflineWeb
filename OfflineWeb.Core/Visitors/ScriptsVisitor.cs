@@ -38,7 +38,7 @@ namespace OfflineWeb.Visitors
 			}
 
 			// Get the script and insert it inline.
-			var content = await context.WebClient.DownloadStringAsync(srcUri);
+			var content = await context.WebClient.DownloadAsync(srcUri);
 			content = "<script>" + content + "</script>";
 			return HtmlNode.CreateNode(content);
 		}

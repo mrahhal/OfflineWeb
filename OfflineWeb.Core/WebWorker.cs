@@ -63,7 +63,7 @@ namespace OfflineWeb
 		private async Task<string> InternalProcessPageAsync(Uri address)
 		{
 			// Download the webpage.
-			var content = await WebClient.DownloadStringAsync(address);
+			var content = await WebClient.DownloadAsync(address);
 
 			// Create the document.
 			var document = new HtmlDocument();
