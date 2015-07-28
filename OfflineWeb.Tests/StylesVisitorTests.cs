@@ -43,8 +43,8 @@ namespace OfflineWeb.Tests
 		{
 			var visitor = new StylesVisitor();
 			var node = HtmlNode.CreateNode(@"<link href=""http://www.some2.com/l.css"" rel=""stylesheet"">");
-			var client = CreateWebClientMock();
-            var context = new VisitingContext()
+			var client = VisitorsHelper.CreateWebClientMock("html{width:0}");
+			var context = new VisitingContext()
 			{
 				RawAddress = "http://www.some.com",
 				WebClient = client.Object,
@@ -59,7 +59,7 @@ namespace OfflineWeb.Tests
 		{
 			var visitor = new StylesVisitor();
 			var node = HtmlNode.CreateNode(@"<link href=""l.css"" rel=""stylesheet"">");
-			var client = CreateWebClientMock();
+			var client = VisitorsHelper.CreateWebClientMock("html{width:0}");
 			var context = new VisitingContext()
 			{
 				RawAddress = "http://www.some.com",
@@ -70,13 +70,6 @@ namespace OfflineWeb.Tests
 			Assert.Equal("<style>html{width:0}</style>", newNode.OuterHtml);
 		}
 
-		private Mock<IWebClient> CreateWebClientMock(string returns = null)
-		{
-			var client = new Mock<IWebClient>();
-			client
-				.Setup(c => c.DownloadStringAsync(It.IsAny<string>()))
-				.ReturnsAsync(returns ?? "html{width:0}");
-			return client;
-		}
+		
 	}
 }

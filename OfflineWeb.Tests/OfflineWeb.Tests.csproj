@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StylesVisitorTests.cs" />
+    <Compile Include="VisitorsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OfflineWeb.Core\OfflineWeb.Core.csproj">
