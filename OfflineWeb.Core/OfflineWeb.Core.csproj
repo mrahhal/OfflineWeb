@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NodeDescriptor.cs" />
     <Compile Include="VisitingContext.cs" />
     <Compile Include="NodeKind.cs" />
     <Compile Include="IVisitor.cs" />
