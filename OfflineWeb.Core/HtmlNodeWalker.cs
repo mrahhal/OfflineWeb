@@ -53,10 +53,10 @@ namespace OfflineWeb
 			switch (_mode)
 			{
 				case HtmlNodeWalkerMode.Descendants:
-					_nodes = _root.Descendants().GetEnumerator();
+					_nodes = _root.Descendants().ToList().GetEnumerator();
 					break;
 				case HtmlNodeWalkerMode.Children:
-					_nodes = _root.ChildNodes.Nodes().GetEnumerator();
+					_nodes = _root.ChildNodes.Nodes().ToList().GetEnumerator();
 					break;
 			}
 		}
