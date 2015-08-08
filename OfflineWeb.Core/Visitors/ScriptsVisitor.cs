@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
@@ -38,7 +39,15 @@ namespace OfflineWeb.Visitors
 			}
 
 			// Get the script and insert it inline.
-			var content = await context.WebClient.DownloadAsync(srcUri);
+			var content = default(string);
+			try
+			{
+				content = await context.WebClient.DownloadAsync(srcUri);
+			}
+			catch (WebException)
+			{
+				return node;
+			}
 			content = "<script>" + content + "</script>";
 			return HtmlNode.CreateNode(content);
 		}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
@@ -34,7 +35,15 @@ namespace OfflineWeb.Visitors
 			}
 
 			// Get the stylesheet and insert it inline.
-			var content = await context.WebClient.DownloadAsync(hrefUri);
+			var content = default(string);
+			try
+			{
+				content = await context.WebClient.DownloadAsync(hrefUri);
+			}
+			catch (WebException)
+			{
+				return node;
+			}
 			content = "<style>" + content + "</style>";
 			return HtmlNode.CreateNode(content);
 		}
