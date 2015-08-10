@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Core", "OfflineW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Tests", "OfflineWeb.Tests\OfflineWeb.Tests.csproj", "{42184D75-20AC-4CE9-BE34-15015837C29D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Console", "OfflineWeb.Console\OfflineWeb.Console.csproj", "{62C54763-8BBE-4EC4-93C8-0D5096A2361D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{42184D75-20AC-4CE9-BE34-15015837C29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42184D75-20AC-4CE9-BE34-15015837C29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42184D75-20AC-4CE9-BE34-15015837C29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
