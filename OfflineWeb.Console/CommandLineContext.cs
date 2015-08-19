@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Security.AccessControl;
 using Konsola;
 using Konsola.Attributes;
 
@@ -23,11 +25,37 @@ namespace OfflineWeb
 
 		public override void ExecuteCommand()
 		{
-			Local = Local ?? Path.GetFileNameWithoutExtension(Url);
-			var path = Path.Combine(Environment.CurrentDirectory, Local);
+            var fileName = Path.GetFileNameWithoutExtension(Url) + ".html";
+            string path = null;
+            if (Local != null)
+            {
+                if (IsDirectory(Local))
+                {
+                    path = Path.Combine(Local, fileName);
+                }
+                else
+                {
+                    path = Local;
+                }
+            }
+            else
+            {
+                path = Path.Combine(Environment.CurrentDirectory, fileName);
+            }
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+            }
+
 			var worker = new WebWorker();
 			var result = worker.ProcessPageAsync(Url).Unwrap();
-			File.WriteAllText(path, result);
+			File.WriteAllText(path, result, Encoding.Unicode);
 		}
+
+        private bool IsDirectory(string path)
+        {
+            return Path.GetExtension(path) == string.Empty;
+        }
 	}
 }
