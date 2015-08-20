@@ -12,7 +12,7 @@ namespace OfflineWeb
 		private static void Main(string[] args)
 		{
 			var console = new Konsola.Console();
-            var context = CommandLineParser.Parse<CommandLineContext>(args, console);
+			var context = CommandLineParser.Parse<CommandLineContext>(args, console);
 			if (context == null)
 				return;
 			try
@@ -26,8 +26,8 @@ namespace OfflineWeb
 			catch (WebException)
 			{
 				console.WriteLine(WriteKind.Error, "Couldn't process the page");
-            }
-			catch(UnauthorizedAccessException)
+			}
+			catch (UnauthorizedAccessException)
 			{
 				console.WriteLine(WriteKind.Error, "Access Denied! Either the directory is protected or you don't has the permissinon to write to it!");
 				console.WriteLine(WriteKind.Info, "Try Running as administrator");
