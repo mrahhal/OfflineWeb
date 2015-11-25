@@ -70,7 +70,7 @@ namespace OfflineWeb.Tests
 			var newNode = await visitor.VisitAsync(context, node);
 
 			// Assert
-			client.Verify(c => c.DownloadAsync("http://www.some2.com/l.css"), Times.Once);
+			client.Verify(c => c.DownloadAsync(new Uri("http://www.some2.com/l.css")), Times.Once);
 			Assert.Equal("<style>html{width:0}</style>", newNode.OuterHtml);
 		}
 
@@ -91,7 +91,7 @@ namespace OfflineWeb.Tests
 			var newNode = await visitor.VisitAsync(context, node);
 
 			// Assert
-			client.Verify(c => c.DownloadAsync("http://www.some.com/l.css"), Times.Once);
+			client.Verify(c => c.DownloadAsync(new Uri("http://www.some.com/l.css")), Times.Once);
 			Assert.Equal("<style>html{width:0}</style>", newNode.OuterHtml);
 		}
 	}

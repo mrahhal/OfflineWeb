@@ -8,14 +8,14 @@ namespace OfflineWeb
 {
 	public interface IWebClient
 	{
-		Task<string> DownloadAsync(string address);
+		Task<string> DownloadAsync(Uri address);
 	}
 
 	public static class WebClientExtensions
 	{
-		public static Task<string> DownloadAsync(this IWebClient @this, Uri address)
+		public static Task<string> DownloadAsync(this IWebClient @this, string address)
 		{
-			return @this.DownloadAsync(address.ToString());
+			return @this.DownloadAsync(new Uri(address));
 		}
 	}
 
@@ -23,7 +23,7 @@ namespace OfflineWeb
 	{
 		private WebClient _webClient = new WebClient();
 
-		public Task<string> DownloadAsync(string address)
+		public Task<string> DownloadAsync(Uri address)
 		{
 			return _webClient.DownloadStringTaskAsync(address);
 		}

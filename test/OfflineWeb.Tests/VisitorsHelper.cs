@@ -11,7 +11,7 @@ namespace OfflineWeb.Tests
 		{
 			var client = new Mock<IWebClient>();
 			client
-				.Setup(c => c.DownloadAsync(It.IsAny<string>()))
+				.Setup(c => c.DownloadAsync(It.IsAny<Uri>()))
 				.ReturnsAsync(returns);
 			return client;
 		}

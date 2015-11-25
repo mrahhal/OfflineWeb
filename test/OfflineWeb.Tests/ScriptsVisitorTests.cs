@@ -42,7 +42,7 @@ namespace OfflineWeb.Tests
 			var newNode = await visitor.VisitAsync(context, node);
 
 			// Assert
-			client.Verify(c => c.DownloadAsync("http://www.some2.com/l.js"), Times.Once);
+			client.Verify(c => c.DownloadAsync(new Uri("http://www.some2.com/l.js")), Times.Once);
 			Assert.Equal("<script>function some(){}</script>", newNode.OuterHtml);
 		}
 
@@ -63,7 +63,7 @@ namespace OfflineWeb.Tests
 			var newNode = await visitor.VisitAsync(context, node);
 
 			// Assert
-			client.Verify(c => c.DownloadAsync("http://www.some.com/l.js"), Times.Once);
+			client.Verify(c => c.DownloadAsync(new Uri("http://www.some.com/l.js")), Times.Once);
 			Assert.Equal("<script>function some(){}</script>", newNode.OuterHtml);
 		}
 
@@ -84,7 +84,7 @@ namespace OfflineWeb.Tests
 			var newNode = await visitor.VisitAsync(context, node);
 
 			// Assert
-			client.Verify(c => c.DownloadAsync("http://www.some2.com/l.js"), Times.Once);
+			client.Verify(c => c.DownloadAsync(new Uri("http://www.some2.com/l.js")), Times.Once);
 			Assert.Equal("<script>function some(){}</script>", newNode.OuterHtml);
 		}
 	}
