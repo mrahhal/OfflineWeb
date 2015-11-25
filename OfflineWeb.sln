@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Core", "OfflineWeb.Core\OfflineWeb.Core.csproj", "{AD227DC0-5496-476A-A07A-51920B48A00E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F51A26DB-746A-4011-95B2-D074237FC92F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Tests", "OfflineWeb.Tests\OfflineWeb.Tests.csproj", "{42184D75-20AC-4CE9-BE34-15015837C29D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{853309CA-810E-4AF4-8ACA-B057D05BF9FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Console", "OfflineWeb.Console\OfflineWeb.Console.csproj", "{62C54763-8BBE-4EC4-93C8-0D5096A2361D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Core", "src\OfflineWeb.Core\OfflineWeb.Core.csproj", "{AD227DC0-5496-476A-A07A-51920B48A00E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Console", "src\OfflineWeb.Console\OfflineWeb.Console.csproj", "{62C54763-8BBE-4EC4-93C8-0D5096A2361D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfflineWeb.Tests", "test\OfflineWeb.Tests\OfflineWeb.Tests.csproj", "{42184D75-20AC-4CE9-BE34-15015837C29D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +23,21 @@ Global
 		{AD227DC0-5496-476A-A07A-51920B48A00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD227DC0-5496-476A-A07A-51920B48A00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD227DC0-5496-476A-A07A-51920B48A00E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42184D75-20AC-4CE9-BE34-15015837C29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42184D75-20AC-4CE9-BE34-15015837C29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42184D75-20AC-4CE9-BE34-15015837C29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42184D75-20AC-4CE9-BE34-15015837C29D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62C54763-8BBE-4EC4-93C8-0D5096A2361D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42184D75-20AC-4CE9-BE34-15015837C29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42184D75-20AC-4CE9-BE34-15015837C29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42184D75-20AC-4CE9-BE34-15015837C29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42184D75-20AC-4CE9-BE34-15015837C29D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD227DC0-5496-476A-A07A-51920B48A00E} = {F51A26DB-746A-4011-95B2-D074237FC92F}
+		{62C54763-8BBE-4EC4-93C8-0D5096A2361D} = {F51A26DB-746A-4011-95B2-D074237FC92F}
+		{42184D75-20AC-4CE9-BE34-15015837C29D} = {853309CA-810E-4AF4-8ACA-B057D05BF9FB}
 	EndGlobalSection
 EndGlobal
