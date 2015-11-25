@@ -1,12 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using Konsola;
-using Konsola.Attributes;
+using Konsola.Parser;
 
 namespace OfflineWeb
 {
-	[ContextOptions(Description = "Downloads complete webpages with resources to a single html file for offline viewing.", ExitOnException = true)]
+	[ContextOptions(Description = "Downloads complete webpages with resources to a single html file for offline viewing.")]
 	[DefaultCommand(typeof(DefaultCommand))]
 	public class CommandLineContext : ContextBase
 	{
