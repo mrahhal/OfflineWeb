@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
@@ -23,7 +21,7 @@ namespace OfflineWeb.Visitors
 		public async Task<HtmlNode> VisitAsync(VisitingContext context, HtmlNode node)
 		{
 			var src = node.GetAttributeValue("src", null);
-            if (src == null)
+			if (src == null)
 				return node;
 
 			// Take care if the src starts with two slashes.
